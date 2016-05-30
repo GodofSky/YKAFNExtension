@@ -23,21 +23,17 @@
     dispatch_once(&onceToken, ^{
         
         sharedAPI = [[self alloc] init];
+        //添加检测网络的通知
         [[NSNotificationCenter defaultCenter] addObserver:sharedAPI selector:@selector(networkStateChange) name:kReachabilityChangedNotification object:nil];
         sharedAPI.conn = [Reachability reachabilityForInternetConnection];
         
         [sharedAPI.conn startNotifier];
         //检测网络
-        
-        
         [sharedAPI networkStateChange];
-
         
     });
     return sharedAPI;
 }
-
-
 
 
 - (void)networkStateChange
@@ -210,15 +206,10 @@
 
 
 
-
-- (void)dealloc
+-(void)dealloc
 {
     //移除通知
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    //    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
-    [self.conn stopNotifier];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
 }
 
 @end

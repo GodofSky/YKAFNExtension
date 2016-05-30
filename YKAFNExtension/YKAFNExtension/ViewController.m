@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "YKDataTaskManger.h"
 
 @interface ViewController ()
 
@@ -17,26 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (IsOnline) {
-        NSLog(@"有网");
-    }else
-    {
-        NSLog(@"没网");
-    }
-    if (IsMobileNetwork) {
-        NSLog(@"是3G");
-    }
-    else
-    {
-        NSLog(@"不是3G");
-    }
-    if (IsWifi) {
-        NSLog(@"是WiFi");
-    }
-    else
-    {
-        NSLog(@"不是WiFi");
-    }
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {

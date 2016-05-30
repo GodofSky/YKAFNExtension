@@ -13,16 +13,11 @@ typedef void(^YKBlockWithBlackDataSuccess)(id responseObject);
 typedef void(^YKBlockWithBlackDataFail)(NSError * error);
 
 
-
-#define IsOnline [YKDataTaskManger shareNetworkManger].isOnline
-
-#define IsMobileNetwork [YKDataTaskManger shareNetworkManger].isMobileNetwork
-
-#define IsWifi [YKDataTaskManger shareNetworkManger].isWifi
-
-
-
 @interface YKDataTaskManger : NSObject
+
+#define IsOnline [YKDataTaskManger shareNetworkManger].isOnline;
+
+#define IsWifi [YKDataTaskManger shareNetworkManger].isWifi;
 
 #pragma mark - 关于网络状态的方法
 /**
